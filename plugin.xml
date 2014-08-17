@@ -23,7 +23,7 @@
     <description>Plugin to extract advanced network information</description>
     <license>Apache 2.0</license>
     <keywords>cordova,signal,network</keywords>
-    <repo></repo>
+    <repo>https://github.com/abbasdawood/org.apache.cordova.signal.git</repo>
     <issue></issue>
 
     <js-module src="www/signal.js" name="signal">

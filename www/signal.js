@@ -57,7 +57,7 @@ function Signal() {
 
 Signal.prototype.getAdvancedNetworkInfo = function(successCallback, errorCallback) {
     argscheck.checkArgs('Network', 'Signal.getAdvancedNetworkInfo', arguments);
-    exec(null, null, 'Signal', 'getSignalInfo', []);
+    exec(successCallback, errorCallback, 'Signal', 'getSignalInfo', []);
 };
 
 module.exports = new Signal();
