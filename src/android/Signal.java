@@ -1,4 +1,4 @@
-package org.apache.cordova.signal;
+package com.abbasdawood.cordova.signal;
 
 import java.util.List;
 
