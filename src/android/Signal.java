@@ -64,7 +64,7 @@ public class Signal extends CordovaPlugin {
             r.put("operator", this.getOperator());
             r.put("cellID", this.getCellID());
             r.put("lac", this.getLac());
-            r.put("neighbourInfo", this.getNeighbours());
+            r.put("neighbors", this.getNeighbours());
             callbackContext.success(r);
         }
         else {
