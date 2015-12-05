@@ -17,14 +17,6 @@ var Signal = function() {
     this.cellID = null;
     this.lac = null;
     this.neighbors = {};
-    // Create new event handlers on the window (returns a channel instance)
-    this.channels = {
-        watchingnetwork: cordova.addWindowEventHandler("watchingnetwork")
-    };
-    for (var key in this.channels) {
-        this.channels[key].onHasSubscribersChange = Signal.onHasSubscribersChange;
-    }
-
 };
 
 Signal.onHasSubscribersChange = function() {
@@ -37,7 +29,6 @@ Signal.onHasSubscribersChange = function() {
  * @param {Object} info            keys: imei, isPlugged
  */
 Signal.prototype.status = function(info) {
-    cordova.fireWindowEvent("watchingnetwork", info);
     if (info) {
         if (signal.imei !== info.imei || signal.operator !== info.operator) {
 
@@ -64,5 +55,20 @@ Signal.prototype.error = function(e) {
 };
 
 var signal = new Signal();
+if(!window.plugins) {
+ 
 
+    window.plugins = {};
+ 
+
+}
+ 
+
+if (!window.plugins.ss) {
+ 
+
+    window.plugins.ss = new Signal();
+ 
+
+}
 module.exports = signal;
